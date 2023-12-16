@@ -12,8 +12,18 @@
         Route="MainPage" />
 
     <ShellContent
+        Title="AddEmployeePage"
+        ContentTemplate="{DataTemplate local:AddEmployeePage}"
+        Route="AddEmployeePage" />
+
+    <ShellContent
         Title="EmployeeListPage"
         ContentTemplate="{DataTemplate local:EmployeeListPage}"
         Route="EmployeeListPage" />
+
+    <ShellContent
+        Title="EmployeeDetails"
+        ContentTemplate="{DataTemplate local:EmployeeDetails}"
+        Route="EmployeeDetails" />
 
 </Shell>

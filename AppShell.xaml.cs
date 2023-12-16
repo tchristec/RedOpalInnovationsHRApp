@@ -6,5 +6,7 @@
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(EmployeeListPage), typeof(EmployeeListPage));
+            Routing.RegisterRoute(nameof(AddEmployeePage), typeof(AddEmployeePage));            
+            Routing.RegisterRoute(nameof(EmployeeDetails), typeof(EmployeeDetails));
         }
     }

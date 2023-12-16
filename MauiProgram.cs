@@ -19,8 +19,14 @@ namespace RedOpalInnovationsHRApp
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<MainViewModel>();
 
-            builder.Services.AddTransient<EmployeeListPage>();
-            builder .Services.AddTransient<EmployeeListViewModel>();
+            builder.Services.AddTransient<AddEmployeePage>();
+            builder.Services.AddTransient<AddEmployeeViewModel>();
+
+            builder.Services.AddSingleton<EmployeeListPage>();
+            builder.Services.AddSingleton<EmployeeListViewModel>();
+
+            builder.Services.AddTransient<EmployeeDetails>();
+            builder.Services.AddTransient<EmployeeDetailsViewModel>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

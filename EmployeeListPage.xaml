@@ -4,52 +4,120 @@
              x:Class="RedOpalInnovationsHRApp.EmployeeListPage"
              Title="EmployeeListPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="Transparent" Padding="10" Margin="20">
-            <StackLayout>
-                <Label Text="Add Employee" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20" />
-                <!--Entry Fields for Employee Information-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
 
-                <Entry Placeholder="First Name" x:Name="FirstNameEntry" />
-                <Entry Placeholder="Last Name" x:Name="LastNameEntry" />
-                <Entry Placeholder="Phone Number" x:Name="PhoneNumberEntry" Keyboard="Telephone"/>
-                <Entry Placeholder="Department" x:Name="DepartmentEntry" />
-                <Entry Placeholder="Address:Street" x:Name="StreetAddressEntry" />
-                <Entry Placeholder="Address:City" x:Name="CityAddressEntry" />
-                <Entry Placeholder="Address:State" x:Name="StateAddressEntry" />
-                <Entry Placeholder="Address:Postal Code" x:Name="PostalCodeAddressEntry" Keyboard="Numeric"/>
-                <Entry Placeholder="Address:Country" x:Name="CountryAddressEntry" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
-                <!-- Add Employee Button -->
-                <Button Text="Add Employee" HorizontalOptions="StartAndExpand" />
+        <Image x:Name="ROILogo"
+               Grid.Column="0"
+               Grid.ColumnSpan="8"
+               Grid.RowSpan="2"
+               Source="roi_logo_colored.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"/>
 
-                <!-- Employee List View with Embedded Buttons -->
-                <ListView x:Name="EmployeeListView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="10">
-                                    <StackLayout Padding="5">
-                                        <Label Text="{Binding FirstName}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding LastName}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding PhoneNumber}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding Department}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding StreetAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding CityAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding StateAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding PostalCodeAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding CountryAddress}" VerticalOptions="CenterAndExpand" />
-                                    </StackLayout>
-                                    <Button Text="Update" />
-                                    <Button Text="Delete" />
-                                    <Button Text="View Details" />
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
-        </Frame>
-    </StackLayout>
+        <Image x:Name="LightGreyPattern"
+               Grid.Column="8"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               Source="grey_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"/>
 
+        <Image x:Name="ContactsIcon"
+               Grid.Column="8"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               Source="contacts_icon.svg"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"/>
+
+        <Image x:Name="BlackTexturePattern"
+               Grid.ColumnSpan="12"
+               Grid.Row="2"
+               Grid.RowSpan="10"
+               Source="black_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+
+        <Image x:Name="AddContactButtonTextureGrey"
+               Grid.Row="2"
+               Grid.RowSpan="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="10"
+               Source="grey_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+
+        <Button x:Name="AddEmployeeButton"
+                Text="Add Contact" 
+                Grid.Row="2"
+                Grid.RowSpan="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="10"
+                BackgroundColor="Transparent"
+                BorderColor="Grey"
+                BorderWidth=".1"
+                FontSize="20"
+                TextColor="Black">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnAddContactTapped"/>
+            </Button.GestureRecognizers>
+        </Button>
+
+        <ListView x:Name="EmployeeListView"
+                  Grid.Row="3"
+                  Grid.RowSpan="9"
+                  Grid.ColumnSpan="12">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding FirstName}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding LastName}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding PhoneNumber}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding Department}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding StreetAddress}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding CityAddress}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding StateAddress}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding PostalCodeAddress}" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding CountryAddress}" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Button Text="Update" />
+                            <Button Text="Delete" />
+                            <Button Text="View Details" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 </ContentPage>
