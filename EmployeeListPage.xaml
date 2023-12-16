@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedOpalInnovationsHRApp.EmployeeListPage"
+             Title="EmployeeListPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Transparent" Padding="10" Margin="20">
+            <StackLayout>
+                <Label Text="Add Employee" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20" />
+                <!--Entry Fields for Employee Information-->
+
+                <Entry Placeholder="First Name" x:Name="FirstNameEntry" />
+                <Entry Placeholder="Last Name" x:Name="LastNameEntry" />
+                <Entry Placeholder="Phone Number" x:Name="PhoneNumberEntry" Keyboard="Telephone"/>
+                <Entry Placeholder="Department" x:Name="DepartmentEntry" />
+                <Entry Placeholder="Address:Street" x:Name="StreetAddressEntry" />
+                <Entry Placeholder="Address:City" x:Name="CityAddressEntry" />
+                <Entry Placeholder="Address:State" x:Name="StateAddressEntry" />
+                <Entry Placeholder="Address:Postal Code" x:Name="PostalCodeAddressEntry" Keyboard="Numeric"/>
+                <Entry Placeholder="Address:Country" x:Name="CountryAddressEntry" />
+
+                <!-- Add Employee Button -->
+                <Button Text="Add Employee" HorizontalOptions="StartAndExpand" />
+
+                <!-- Employee List View with Embedded Buttons -->
+                <ListView x:Name="EmployeeListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <StackLayout Padding="5">
+                                        <Label Text="{Binding FirstName}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding LastName}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding PhoneNumber}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding Department}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding StreetAddress}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding CityAddress}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding StateAddress}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding PostalCodeAddress}" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding CountryAddress}" VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
+                                    <Button Text="Update" />
+                                    <Button Text="Delete" />
+                                    <Button Text="View Details" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
