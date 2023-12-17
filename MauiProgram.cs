@@ -22,6 +22,9 @@ namespace RedOpalInnovationsHRApp
             builder.Services.AddTransient<AddEmployeePage>();
             builder.Services.AddTransient<AddEmployeeViewModel>();
 
+            builder.Services.AddTransient<UpdateEmployeeViewModel>();
+            builder.Services.AddTransient<UpdateEmployeePage>();
+
             builder.Services.AddTransient<EmployeeListPage>();
             builder.Services.AddTransient<EmployeeListViewModel>();
 

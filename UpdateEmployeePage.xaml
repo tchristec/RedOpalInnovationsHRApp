@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedOpalInnovationsHRApp.UpdateEmployeePage"
+             Title="UpdateEmployeePage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Transparent" Padding="10" Margin="20">
+            <StackLayout>
+                <Label Text="Update Contact" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20" />
+                <!--Entry Fields for Employee Information-->
+
+                <Entry Placeholder="{Binding FirstName}" x:Name="FirstNameEntry" />
+                <Entry Placeholder="{Binding LastName}" x:Name="LastNameEntry" />
+                <Entry Placeholder="{Binding PhoneNumber}" x:Name="PhoneNumberEntry" Keyboard="Telephone"/>
+                <Entry Placeholder="{Binding Department}" x:Name="DepartmentEntry" />
+                <Entry Placeholder="{Binding StreetAddress}" x:Name="StreetAddressEntry" />
+                <Entry Placeholder="{Binding CityAddress}" x:Name="CityAddressEntry" />
+                <Entry Placeholder="{Binding StateAddress}" x:Name="StateAddressEntry" />
+                <Entry Placeholder="{Binding PostalCodeAddress}" x:Name="PostalCodeAddressEntry" Keyboard="Numeric"/>
+                <Entry Placeholder="{Binding CountryAddress}" x:Name="CountryAddressEntry" />
+
+                <!-- Update Employee Button -->
+                <Button Text="Update Contact" Clicked="UpdateContact_Clicked"  HorizontalOptions="StartAndExpand" />
+                <!-- Back to EmployeeListPage Button -->
+                <Button Text="Back" Clicked="Back_Clicked" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

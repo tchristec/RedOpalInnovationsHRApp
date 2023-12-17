@@ -21,7 +21,7 @@
                 <Entry Placeholder="Address:Country" x:Name="CountryAddressEntry" />
 
                 <!-- Add Employee Button -->
-                <Button Text="Add Contact" Clicked="Button_Clicked"  HorizontalOptions="StartAndExpand" />
+                <Button Text="Add Contact" Clicked="AddContact_Clicked"  HorizontalOptions="StartAndExpand" />
                 <!-- Back to EmployeeListPage Button -->
                 <Button Text="Back" Clicked="Back_Clicked" HorizontalOptions="StartAndExpand"/>
             </StackLayout>

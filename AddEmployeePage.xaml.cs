@@ -9,10 +9,11 @@ public partial class AddEmployeePage : ContentPage
 
 	private void Back_Clicked(object sender, EventArgs e)
     {
+        
         Shell.Current.GoToAsync("//EmployeeListPage");
     }
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private async void AddContact_Clicked(object sender, EventArgs e)
     {
         var newEmployee = new Employee
         {
@@ -32,5 +33,7 @@ public partial class AddEmployeePage : ContentPage
         FirstNameEntry.Text = LastNameEntry.Text = PhoneNumberEntry.Text = DepartmentEntry.Text
             = StreetAddressEntry.Text = CityAddressEntry.Text = StateAddressEntry.Text
             = PostalCodeAddressEntry.Text = CountryAddressEntry.Text = string.Empty;
+
+        Shell.Current.GoToAsync("//EmployeeListPage");
     }
 }
