@@ -21,34 +21,9 @@
                 <Entry Placeholder="Address:Country" x:Name="CountryAddressEntry" />
 
                 <!-- Add Employee Button -->
-                <Button Text="Add Contact" Clicked="AddEmployee_Clicked" HorizontalOptions="StartAndExpand" />
+                <Button Text="Add Contact" Clicked="Button_Clicked"  HorizontalOptions="StartAndExpand" />
+                <!-- Back to EmployeeListPage Button -->
                 <Button Text="Back" Clicked="Back_Clicked" HorizontalOptions="StartAndExpand"/>
-
-                <!-- Employee List View with Embedded Buttons -->
-                <ListView x:Name="AddEmployeeView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="10">
-                                    <StackLayout Padding="5">
-                                        <Label Text="{Binding FirstName}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding LastName}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding PhoneNumber}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding Department}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding StreetAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding CityAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding StateAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding PostalCodeAddress}" VerticalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding CountryAddress}" VerticalOptions="CenterAndExpand" />
-                                    </StackLayout>
-                                    <Button Text="Update" Clicked="UpdateEmployee_Clicked" />
-                                    <Button Text="Delete" Clicked="DeleteEmployee_Clicked" />
-                                    <Button Text="View Details" Clicked="ViewDetails_Clicked"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
             </StackLayout>
         </Frame>
     </StackLayout>

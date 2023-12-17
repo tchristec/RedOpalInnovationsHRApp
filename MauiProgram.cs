@@ -22,11 +22,15 @@ namespace RedOpalInnovationsHRApp
             builder.Services.AddTransient<AddEmployeePage>();
             builder.Services.AddTransient<AddEmployeeViewModel>();
 
-            builder.Services.AddSingleton<EmployeeListPage>();
-            builder.Services.AddSingleton<EmployeeListViewModel>();
+            builder.Services.AddTransient<EmployeeListPage>();
+            builder.Services.AddTransient<EmployeeListViewModel>();
 
             builder.Services.AddTransient<EmployeeDetails>();
             builder.Services.AddTransient<EmployeeDetailsViewModel>();
+
+
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Employee.db");
+            builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<DatabaseService>(s, dbPath));
 
 #if DEBUG
 		builder.Logging.AddDebug();

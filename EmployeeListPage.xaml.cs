@@ -1,25 +1,19 @@
-using RedOpalInnovationsHRApp.ViewModel;
-using SQLite;
-
 namespace RedOpalInnovationsHRApp
 {
     public partial class EmployeeListPage : ContentPage
     {
-        private DatabaseService _databaseService;
-
         private List<Employee> _employees;
         public EmployeeListPage()
         {
             InitializeComponent();
-
-            _databaseService = new DatabaseService();
+            LoadEmployeesAsync();
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
 
-            LoadEmployeesAsync();
+            await App.DatabaseService.ReadEmployeesAsync();
         }
 
         private async void UpdateEmployee_Clicked(object sender, EventArgs e) 
@@ -28,40 +22,40 @@ namespace RedOpalInnovationsHRApp
             await Navigation.PushAsync(new EmployeeDetails(selectedEmployee));
         }
 
-        private async void DeleteEmployee_Clicked(Object sender, EventArgs e) 
+        private async Task DeleteEmployee_Clicked(Object sender, EventArgs e) 
         {
             var selectedEmployee = (Employee)(((Button)sender).BindingContext);
             bool result = await DisplayAlert("Delete Contact", "Delete this contact?", "Yes", "No");
 
             if (result) 
             {
-                await _databaseService.DeleteEmployeeAsync(selectedEmployee);
-                LoadEmployeesAsync();
+                await App.DatabaseService.DeleteEmployeeAsync(selectedEmployee);
+                await App.DatabaseService.ReadEmployeesAsync();
             }
         }
 
-        private async void ViewDetails_Clicked(object sender, EventArgs e) 
+        private async Task ViewDetails_Clicked(object sender, EventArgs e) 
         {
             var selectedEmployee = (Employee)((Button)sender).BindingContext;
             await Navigation.PushAsync(new EmployeeDetails(selectedEmployee));
+        }
+
+        private void OnAddContactTapped(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//AddEmployeePage");
         }
 
         private async void LoadEmployeesAsync() 
         {
             try 
             {
-                _employees = await _databaseService.ReadEmplyeeAsync();
-                EmployeeListView.ItemsSource = _employees;
+                _employees = await App.DatabaseService.ReadEmployeesAsync();
+                contactsList.ItemsSource = _employees;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-        }
-
-        private void OnAddContactTapped(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync("//AddEmployeePage");
         }
 
     }
