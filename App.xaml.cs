@@ -2,11 +2,16 @@
 {
     public partial class App : Application
     {
-        public App()
+
+        public static DatabaseService DatabaseService { get; private set; }
+
+        public App(DatabaseService db)
         {
             InitializeComponent();
 
             MainPage = new AppShell();
+
+            DatabaseService = db;
         }
     }
 }

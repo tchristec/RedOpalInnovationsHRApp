@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedOpalInnovationsHRApp.UpdateEmployeePage"
+             Title="UpdateEmployeePage">
+    <Grid>
+        <Image x:Name="LightGreyPattern"
+               Grid.Column="8"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               Source="black_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+        <StackLayout>
+            <Frame BackgroundColor="Transparent" Padding="10" Margin="20">
+                <StackLayout>
+                    <Label Text="Update Contact" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20" />
+                    <!--Entry Fields for Employee Information-->
+
+                    <Entry Placeholder="First Name" x:Name="FirstNameEntry" />
+                    <Entry Placeholder="Last Name" x:Name="LastNameEntry" />
+                    <Entry Placeholder="Phone Number" x:Name="PhoneNumberEntry" Keyboard="Telephone"/>
+                    <Entry Placeholder="Department" x:Name="DepartmentEntry" />
+                    <Entry Placeholder="Street Address" x:Name="StreetAddressEntry" />
+                    <Entry Placeholder="City" x:Name="CityAddressEntry" />
+                    <Entry Placeholder="State" x:Name="StateAddressEntry" />
+                    <Entry Placeholder="Postal Code" x:Name="PostalCodeAddressEntry" Keyboard="Numeric"/>
+                    <Entry Placeholder="Country" x:Name="CountryAddressEntry" />
+
+                    <!-- Update Employee Button -->
+                    <Button Text="Update Contact" Clicked="UpdateContact_Clicked"  HorizontalOptions="StartAndExpand" />
+                    <!-- Back to EmployeeListPage Button -->
+                    <Button Text="Cancel" Clicked="Cancel_Clicked" HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>

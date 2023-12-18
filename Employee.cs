@@ -2,7 +2,7 @@
 
 public class Employee 
 {
-    [PrimaryKey, AutoIncrement]
+    [PrimaryKey, AutoIncrement, Column("Id")]
     public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
