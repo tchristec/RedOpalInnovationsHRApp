@@ -7,7 +7,7 @@ public partial class AddEmployeePage : ContentPage
 		InitializeComponent();
 	}
 
-	private void Back_Clicked(object sender, EventArgs e)
+	private void Cancel_Clicked(object sender, EventArgs e)
     {
         
         Shell.Current.GoToAsync("//EmployeeListPage");

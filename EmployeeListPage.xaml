@@ -76,7 +76,7 @@
                BackgroundColor="Transparent"
                Aspect="AspectFill"/>
 
-        <Button x:Name="AddEmployeeButton"
+        <Button x:Name="AddContactButton"
                 Text="Add Contact" 
                 Grid.Row="2"
                 Grid.RowSpan="1"
@@ -85,7 +85,7 @@
                 BackgroundColor="Transparent"
                 BorderColor="Grey"
                 BorderWidth=".1"
-                FontSize="20"
+                FontSize="25"
                 TextColor="Black">
             <Button.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnAddContactTapped"/>
@@ -141,13 +141,3 @@
         </ScrollView>
     </Grid>
 </ContentPage>
-
-<!--<Label Text="{Binding FirstName}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding LastName}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding PhoneNumber}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding Department}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding StreetAddress}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding CityAddress}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding StateAddress}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding PostalCodeAddress}" VerticalOptions="CenterAndExpand" />
-<Label Text="{Binding CountryAddress}" VerticalOptions="CenterAndExpand" />-->

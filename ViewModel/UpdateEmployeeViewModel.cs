@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace RedOpalInnovationsHRApp.ViewModel
 {
@@ -6,5 +7,12 @@ namespace RedOpalInnovationsHRApp.ViewModel
     {
         [ObservableProperty]
         string text;
+
+        [RelayCommand]
+        async Task BackSimple() 
+        {
+            await Shell.Current.GoToAsync("..", true);
+        }
+
     }
 }

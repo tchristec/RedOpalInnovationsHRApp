@@ -18,7 +18,7 @@ public partial class EmployeeListPage : ContentPage
     private async void UpdateEmployee_Clicked(object sender, EventArgs e) 
     {
         var selectedEmployee = (Employee)((SwipeItem)sender).BindingContext;
-        await Navigation.PushAsync(new EmployeeDetails(selectedEmployee));
+        await Navigation.PushAsync(new UpdateEmployeePage(selectedEmployee));
     }
 
     private async void DeleteEmployee_Clicked(Object sender, EventArgs e) 

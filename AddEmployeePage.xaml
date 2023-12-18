@@ -3,29 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RedOpalInnovationsHRApp.AddEmployeePage"
              Title="AddemployeePage">
+    <Grid>
+        <Image x:Name="LightGreyPattern"
+               Grid.Column="8"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               Source="black_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+        <StackLayout>
+            <Frame BackgroundColor="Transparent" Padding="10" Margin="20">
+                <StackLayout>
+                    <Label Text="Add Contact" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20" />
+                    <!--Entry Fields for Employee Information-->
 
-    <StackLayout>
-        <Frame BackgroundColor="Transparent" Padding="10" Margin="20">
-            <StackLayout>
-                <Label Text="Add Contact" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20" />
-                <!--Entry Fields for Employee Information-->
+                    <Entry Placeholder="First Name" x:Name="FirstNameEntry" />
+                    <Entry Placeholder="Last Name" x:Name="LastNameEntry" />
+                    <Entry Placeholder="Phone Number" x:Name="PhoneNumberEntry" Keyboard="Telephone"/>
+                    <Entry Placeholder="Department" x:Name="DepartmentEntry" />
+                    <Entry Placeholder="Address:Street" x:Name="StreetAddressEntry" />
+                    <Entry Placeholder="Address:City" x:Name="CityAddressEntry" />
+                    <Entry Placeholder="Address:State" x:Name="StateAddressEntry" />
+                    <Entry Placeholder="Address:Postal Code" x:Name="PostalCodeAddressEntry" Keyboard="Numeric"/>
+                    <Entry Placeholder="Address:Country" x:Name="CountryAddressEntry" />
 
-                <Entry Placeholder="First Name" x:Name="FirstNameEntry" />
-                <Entry Placeholder="Last Name" x:Name="LastNameEntry" />
-                <Entry Placeholder="Phone Number" x:Name="PhoneNumberEntry" Keyboard="Telephone"/>
-                <Entry Placeholder="Department" x:Name="DepartmentEntry" />
-                <Entry Placeholder="Address:Street" x:Name="StreetAddressEntry" />
-                <Entry Placeholder="Address:City" x:Name="CityAddressEntry" />
-                <Entry Placeholder="Address:State" x:Name="StateAddressEntry" />
-                <Entry Placeholder="Address:Postal Code" x:Name="PostalCodeAddressEntry" Keyboard="Numeric"/>
-                <Entry Placeholder="Address:Country" x:Name="CountryAddressEntry" />
-
-                <!-- Add Employee Button -->
-                <Button Text="Add Contact" Clicked="AddContact_Clicked"  HorizontalOptions="StartAndExpand" />
-                <!-- Back to EmployeeListPage Button -->
-                <Button Text="Back" Clicked="Back_Clicked" HorizontalOptions="StartAndExpand"/>
-            </StackLayout>
-        </Frame>
-    </StackLayout>
-
+                    <!-- Add Employee Button -->
+                    <Button Text="Add Contact" Clicked="AddContact_Clicked"  HorizontalOptions="StartAndExpand" />
+                    <!-- Back to EmployeeListPage Button -->
+                    <Button Text="Cancel" Clicked="Cancel_Clicked" HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </Grid>
 </ContentPage>
