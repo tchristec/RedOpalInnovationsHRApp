@@ -25,7 +25,6 @@ public partial class UpdateEmployeePage : ContentPage
             Country = CountryAddressEntry.Text
         };
 
-        await App.DatabaseService.UpdateEmployeeAsync(employee);
 
         var selectedEmployee = (Employee)(((Button)sender).BindingContext);
         bool result = await DisplayAlert("Update Contact", "Update contact details?", "Yes", "No");
