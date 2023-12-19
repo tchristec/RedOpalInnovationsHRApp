@@ -10,5 +10,6 @@
             Routing.RegisterRoute(nameof(EmployeeDetails), typeof(EmployeeDetails));
             Routing.RegisterRoute(nameof(UpdateEmployeePage), typeof(UpdateEmployeePage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
         }
     }

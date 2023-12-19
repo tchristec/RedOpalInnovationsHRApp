@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.ScreenBrightness;
 using RedOpalInnovationsHRApp.ViewModel;
 
 namespace RedOpalInnovationsHRApp
@@ -30,6 +31,11 @@ namespace RedOpalInnovationsHRApp
 
             builder.Services.AddTransient<EmployeeDetails>();
             builder.Services.AddTransient<EmployeeDetailsViewModel>();
+
+            builder.Services.AddSingleton<SettingsPage>();
+            builder.Services.AddTransient<SettingsViewModel>();
+
+            builder.Services.AddSingleton(ScreenBrightness.Default);
 
 
             string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Employee.db");

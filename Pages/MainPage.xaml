@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedOpalInnovationsHRApp.MainPage"
+             xmlns:viewmodel="clr-namespace:RedOpalInnovationsHRApp.ViewModel"
+             x:DataType="viewmodel:MainViewModel">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Image x:Name="ROILogo"
+               Grid.Column="0"
+               Grid.ColumnSpan="8"
+               Grid.RowSpan="2"
+               Source="roi_logo_colored.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"/>
+
+        <Image x:Name="LightGreyPattern"
+               Grid.Column="8"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               Source="grey_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"/>
+
+        <Image x:Name="ContactsIcon"
+               Grid.Column="8"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               Source="contacts_icon.svg"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"/>
+
+        <Image x:Name="BlackTexturePattern"
+               Grid.ColumnSpan="12"
+               Grid.Row="2"
+               Grid.RowSpan="10"
+               Source="black_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+
+        <Image x:Name="LoginButtonTextureGrey"
+               Grid.Row="3"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="10"
+               Source="grey_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+
+        <Button x:Name="LoginButton"
+                Text="Login" 
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="10"
+                BackgroundColor="Transparent"
+                BorderColor="Grey"
+                BorderWidth=".1"
+                FontSize="50"
+                TextColor="Black">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLoginTapped"/>
+            </Button.GestureRecognizers>
+        </Button>
+
+        <Image x:Name="SettingsButtonTextureGrey"
+               Grid.Row="6"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="10"
+               Source="grey_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+
+        <Button x:Name="SettingsButton"
+                Text="Settings" 
+                Grid.Row="6"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="10"
+                BackgroundColor="Transparent"
+                BorderColor="Grey"
+                BorderWidth=".1"
+                FontSize="50"
+                TextColor="Black">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSettingsTapped"/>
+            </Button.GestureRecognizers>
+        </Button>
+
+        <Image x:Name="ExitButtonTextureGrey"
+               Grid.Row="9"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="10"
+               Source="grey_texture_image.png"
+               BackgroundColor="Transparent"
+               Aspect="AspectFill"/>
+
+        <Button x:Name="ExitButton"
+                Text="Exit"
+                Grid.Row="9"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="10"
+                BackgroundColor="Transparent"
+                BorderColor="Grey"
+                BorderWidth=".1"
+                FontSize="50"
+                TextColor="Black">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnExitTapped"/>
+            </Button.GestureRecognizers>
+        </Button>
+
+    </Grid>
+
+
+</ContentPage>

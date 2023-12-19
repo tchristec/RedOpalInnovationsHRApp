@@ -58,4 +58,13 @@ public partial class EmployeeListPage : ContentPage
         }
     }
 
+    private void OnHomeTapped(object sender, TappedEventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
+    private void OnSettingsTapped(object sender, TappedEventArgs e)
+    {
+        Shell.Current.GoToAsync("//SettingsPage");
+    }
 }
