@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RedOpalInnovationsHRApp.MainPage"
-             xmlns:viewmodel="clr-namespace:RedOpalInnovationsHRApp.ViewModel"
-             x:DataType="viewmodel:MainViewModel">
+             x:Class="RedOpalInnovationsHRApp.SettingsPage"
+             Title="SettingsPage">
 
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
@@ -21,7 +20,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -36,7 +35,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Image x:Name="ROILogo"
                Grid.Column="0"
                Grid.ColumnSpan="8"
@@ -69,8 +68,25 @@
                BackgroundColor="Transparent"
                Aspect="AspectFill"/>
 
-        <Image x:Name="LoginButtonTextureGrey"
-               Grid.Row="3"
+        <Label x:Name="BrightnessSliderLabel"
+               Grid.Row="5"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="10"
+               Text="Adjust Brightness"
+               TextColor="Black"
+               FontSize="30"
+               FontAttributes="Bold"/>
+
+        <Slider x:Name="sliderBrightness"
+               Grid.Row="6"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="10"
+               ValueChanged="sliderBrightness_ValueChanged"/>
+
+        <Image x:Name="BackButtonTextureGrey"
+               Grid.Row="9"
                Grid.RowSpan="2"
                Grid.Column="1"
                Grid.ColumnSpan="10"
@@ -78,9 +94,9 @@
                BackgroundColor="Transparent"
                Aspect="AspectFill"/>
 
-        <Button x:Name="LoginButton"
-                Text="Login" 
-                Grid.Row="3"
+        <Button x:Name="BackButton"
+                Text="Back"
+                Grid.Row="9"
                 Grid.RowSpan="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="10"
@@ -90,51 +106,9 @@
                 FontSize="50"
                 TextColor="Black">
             <Button.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                <TapGestureRecognizer Tapped="OnBackTapped"/>
             </Button.GestureRecognizers>
         </Button>
-
-        <Image x:Name="SettingsButtonTextureGrey"
-               Grid.Row="6"
-               Grid.RowSpan="2"
-               Grid.Column="1"
-               Grid.ColumnSpan="10"
-               Source="grey_texture_image.png"
-               BackgroundColor="Transparent"
-               Aspect="AspectFill"/>
-
-        <Button x:Name="SettingsButton"
-                Text="Settings" 
-                Grid.Row="6"
-                Grid.RowSpan="2"
-                Grid.Column="1"
-                Grid.ColumnSpan="10"
-                BackgroundColor="Transparent"
-                BorderColor="Grey"
-                BorderWidth=".1"
-                FontSize="50"
-                TextColor="Black"/>
-
-        <Image x:Name="ExitButtonTextureGrey"
-               Grid.Row="9"
-               Grid.RowSpan="2"
-               Grid.Column="1"
-               Grid.ColumnSpan="10"
-               Source="grey_texture_image.png"
-               BackgroundColor="Transparent"
-               Aspect="AspectFill"/>
-
-        <Button x:Name="ExitButton"
-                Text="Exit"
-                Grid.Row="9"
-                Grid.RowSpan="2"
-                Grid.Column="1"
-                Grid.ColumnSpan="10"
-                BackgroundColor="Transparent"
-                BorderColor="Grey"
-                BorderWidth=".1"
-                FontSize="50"
-                TextColor="Black"/>
 
     </Grid>
 

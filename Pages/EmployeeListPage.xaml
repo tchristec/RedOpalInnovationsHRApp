@@ -43,6 +43,16 @@
                BackgroundColor="Transparent"
                Aspect="AspectFit"/>
 
+        <Button x:Name="Home" 
+                Grid.Column="0"
+                Grid.ColumnSpan="8"
+                Grid.RowSpan="2"
+                BackgroundColor="Transparent">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnHomeTapped"/>
+            </Button.GestureRecognizers>
+        </Button>
+
         <Image x:Name="LightGreyPattern"
                Grid.Column="8"
                Grid.ColumnSpan="4"
@@ -51,13 +61,23 @@
                BackgroundColor="Transparent"
                Aspect="AspectFit"/>
 
-        <Image x:Name="ContactsIcon"
+        <Image x:Name="SettingsIcon"
                Grid.Column="8"
                Grid.ColumnSpan="4"
                Grid.RowSpan="2"
-               Source="contacts_icon.svg"
+               Source="settings_gear_black.png"
                BackgroundColor="Transparent"
-               Aspect="AspectFit"/>
+               Aspect="Center"/>
+
+        <Button x:Name="SettingsButton" 
+                Grid.Column="8"
+                Grid.ColumnSpan="4"
+                Grid.RowSpan="2"
+                BackgroundColor="Transparent">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSettingsTapped"/>
+            </Button.GestureRecognizers>
+        </Button>
 
         <Image x:Name="BlackTexturePattern"
                Grid.ColumnSpan="12"

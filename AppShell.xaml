@@ -31,4 +31,9 @@
         ContentTemplate="{DataTemplate local:UpdateEmployeePage}"
         Route="UpdateEmployeePage" />
 
+    <ShellContent
+        Title="SettingsPage"
+        ContentTemplate="{DataTemplate local:SettingsPage}"
+        Route="SettingsPage" />
+
 </Shell>
